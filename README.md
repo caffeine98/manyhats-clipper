@@ -1,6 +1,6 @@
 # ManyHats Clipper
 
-ManyHats Clipper is used to download clips from websites. It uses yt-dlp, so this tool should support whatever that library supports. Input the URL, and the start and end timestamps, and the tool should download it.
+ManyHats Clipper is used to download clips from websites. It uses yt-dlp, so this tool should support whatever that library supports. Input the URL, and the start and end time in seconds, and the tool should download it.
 
 This is a CLI tool, with plans to connect to a frontend interface.
 
