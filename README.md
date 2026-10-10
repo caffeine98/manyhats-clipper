@@ -6,7 +6,7 @@ This is a CLI tool, with plans to connect to a frontend interface.
 
 # Usage
 ```
-usage: main.py [-h] [-start START] [-end END] url
+usage: main.py [-h] [-start START] [-end END] [-max MAX_HEIGHT] url
 
 ManyHats Clipper - Make clips of videos from websites
 
@@ -18,4 +18,6 @@ options:
   -start START, --start START
                         Starting timestamp of the video
   -end END, --end END   Ending timestamp of the video
+  -max MAX_HEIGHT, --max_height MAX_HEIGHT
+                        Set the resolution of the downloaded clip (example, 720, 1080, 480)
 ```
