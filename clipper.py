@@ -13,11 +13,13 @@ class Clipper():
         self.end_time = end_time
 
     def options(self, max_height: int | None = None) -> dict:
+        end_label = "end" if self.end_time == float("inf") else self.end_time
+
         ydl_opts = {
             "format": "bestvideo+bestaudio/best",
             "merge_output_format": "mp4",
             "ffmpeg_location": FFMPEG_PATH,
-            "outtmpl": "%(title).50s [%(id)s].%(ext)s",
+            "outtmpl": f"%(title).50s [%(id)s][{self.start_time}-{end_label}].%(ext)s",
             "windowsfilenames": True,
             "quiet": False,
             "noplaylist": True,
@@ -31,10 +33,10 @@ class Clipper():
 
     def download(self, options: dict):
         with YoutubeDL(options) as ydl:
-            info = ydl.extract_info(url=self.url, download=False)
-            info_title = info.get("title")
-            info_url = info.get("webpage_url")
-            info_duration = info.get("duration")
-            print(f"Downloaded from url: {info_url}")
-            print(f"Title: {info_title}, Duration: {info_duration}")
+            #info = ydl.extract_info(url=self.url, download=False)
+            #info_title = info.get("title")
+            #info_url = info.get("webpage_url")
+            #info_duration = info.get("duration")
+            #print(f"Fetching from url: {info_url}")
+            #print(f"Title: {info_title}, Duration: {info_duration}")
             ydl.download(url_list=[self.url])
